@@ -34,6 +34,9 @@ html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); 
 html { scroll-behavior: smooth; }
 .cover { display: flex; flex-direction: column; align-items: center; gap: 12px; padding-block: 16px 28px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); border-bottom: 1px solid var(--line); }
 .cover img { display: block; width: 100%; max-width: 1200px; height: auto; max-height: 82vh; object-fit: contain; }
+.photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; max-width: 1200px; }
+.photos img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; }
+@media (max-width: 520px) { .photos { grid-template-columns: 1fr; } }
 .go { font: 600 15px var(--f-ui); color: var(--bg); background: var(--ink); text-decoration: none; padding: 12px 20px; border-radius: 999px; }
 .go::after { content: " ↓"; }
 .go:active { transform: scale(.97); }
@@ -126,6 +129,10 @@ h3 { margin: 22px 0 8px; font-size: 13px; font-weight: 600; letter-spacing: .06e
     <source media="(max-width: 700px)" srcset="cover-portrait.jpg">
     <img src="cover.jpg" width="1536" height="1024" alt="Tour à vélo, samedi après-midi : RER et vélo, trois boucles autour de Paris">
   </picture>
+  <div class="photos">
+    <img src="quai.jpg" width="1200" height="800" loading="lazy" alt="Quatre amis avec leurs vélos sur un quai, prêts à monter dans le RER">
+    <img src="canal.jpg" width="1200" height="800" loading="lazy" alt="Deux cyclistes sur la piste d’un canal bordé d’arbres d’automne">
+  </div>
   <a class="go" href="#parcours">Voir les 3 parcours</a>
 </header>
 <main id="parcours"><app-root></app-root></main>
