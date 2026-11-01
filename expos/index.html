@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trois expos de novembre</title>
+<meta property="og:title" content="Trois expos de novembre">
+<meta property="og:description" content="Fayet à la Fondation Vuitton, Tintoret à Jacquemart-André, Mary Cassatt à Orsay : récap et images.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: one gallery wall per exhibition, artworks first, recap and practical card underneath. */
+:root {
+  --bg: #ffffff; --ink: #17161a; --muted: #6b6870; --line: #e7e5ea; --soft: #f5f4f7;
+  --fayet: #b97c10; --tintoret: #9c2a22; --cassatt: #3f67a3;
+  --f-display: "Gloock", Georgia, "Times New Roman", serif;
+  --f-ui: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#121114; --ink:#efedf2; --muted:#a29fa8; --line:#2a282e; --soft:#1b1a1e; --fayet:#e0a83c; --tintoret:#e0675c; --cassatt:#86a8e0; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#121114; --ink:#efedf2; --muted:#a29fa8; --line:#2a282e; --soft:#1b1a1e; --fayet:#e0a83c; --tintoret:#e0675c; --cassatt:#86a8e0; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 var(--f-ui); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.top { padding-block: 48px 28px; }
+.eyebrow { margin: 0; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 400 clamp(40px, 7vw, 76px)/1 var(--f-display); margin: 10px 0 14px; letter-spacing: -.01em; text-wrap: balance; }
+.intro { margin: 0; max-width: 58ch; color: var(--muted); }
+
+.picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+.pick { display: flex; flex-direction: column; gap: 4px; padding: 16px; text-decoration: none; border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: 12px; transition: transform .18s ease; min-width: 0; }
+.pick:hover { transform: translateY(-2px); }
+.pick strong { font: 400 20px/1.2 var(--f-display); }
+.pick span { color: var(--muted); font-size: 14px; }
+.pick .pick-day { color: var(--c); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.pick .pick-meta { font-size: 13px; }
+
+.expo { border-top: 1px solid var(--line); padding-block: 44px 52px; scroll-margin-top: 8px; }
+.when { margin: 0; font-size: 14px; color: var(--muted); }
+.when .day { color: var(--c); font-weight: 600; }
+.expo h2 { font: 400 clamp(30px, 4.6vw, 48px)/1.05 var(--f-display); margin: 8px 0 6px; text-wrap: balance; }
+.artists { margin: 0; font-weight: 500; }
+
+.gallery { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+.gallery figure { margin: 0; flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.gallery img { display: block; width: 100%; height: 320px; object-fit: contain; background: var(--soft); border-radius: 6px; }
+.gallery figure.off a { display: none; }
+.gallery figure.off figcaption::after { content: "Image indisponible ici"; display: block; color: var(--muted); font-size: 12px; }
+figcaption { font-size: 13px; line-height: 1.35; display: flex; flex-direction: column; gap: 2px; }
+figcaption strong { font-weight: 500; }
+figcaption span { color: var(--muted); }
+.tag { align-self: flex-start; font-size: 11px !important; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c) !important; }
+
+.body { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 32px; margin-top: 28px; align-items: start; }
+.lede { margin: 0; font-size: 18px; max-width: 60ch; }
+.facts { margin: 14px 0 0; padding-left: 18px; display: grid; gap: 6px; max-width: 62ch; }
+.facts li::marker { color: var(--c); }
+.like { margin: 16px 0 0; padding: 12px 14px; background: var(--soft); border-radius: 10px; max-width: 62ch; }
+.like strong { color: var(--c); }
+.info { margin: 0; display: grid; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.info div { padding: 10px 14px; border-top: 1px solid var(--line); }
+.info div:first-child { border-top: 0; }
+.info dt { font-size: 12px; color: var(--muted); }
+.info dd { margin: 2px 0 0; font-size: 15px; }
+
+.foot { border-top: 1px solid var(--line); padding-block: 28px 48px; font-size: 13px; color: var(--muted); }
+.foot p { margin: 0 0 8px; max-width: 70ch; }
+.foot ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+@media (max-width: 760px) {
+  .picks { grid-template-columns: 1fr; }
+  .body { grid-template-columns: 1fr; gap: 20px; }
+  .gallery img { height: auto; max-height: 420px; }
+  .top { padding-block: 32px 20px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .pick { transition: none; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <p class="eyebrow">Paris · du 23 au 25 novembre</p>
+    <h1>Trois expos de novembre</h1>
+    <p class="intro">Un collectionneur fou de couleurs, un Vénitien de la Renaissance, une impressionniste américaine. Regarde les œuvres, lis le récap, et choisis ton préféré.</p>
+    <nav class="picks" aria-label="Les trois expos">
+      <a class="pick" href="#fayet" style="--c:var(--fayet)">
+        <span class="pick-day">Lundi</span>
+        <strong>Gauguin · Van Gogh · Redon</strong>
+        <span>Foisonnante, couleurs vives</span>
+        <span class="pick-meta">Immense · 2 h à 2 h 30</span>
+      </a>
+      <a class="pick" href="#tintoret" style="--c:var(--tintoret)">
+        <span class="pick-day">Mardi</span>
+        <strong>Le Tintoret (vers 1518-1594)</strong>
+        <span>Dramatique, sensuelle</span>
+        <span class="pick-meta">Petite · 1 h à 1 h 15</span>
+      </a>
+      <a class="pick" href="#cassatt" style="--c:var(--cassatt)">
+        <span class="pick-day">Mercredi</span>
+        <strong>Mary Cassatt (1844-1926)</strong>
+        <span>Lumineuse, douce</span>
+        <span class="pick-meta">Moyenne · 1 h 30</span>
+      </a>
+    </nav>
+  </header>
+  
+  <section class="expo" id="fayet" style="--c:var(--fayet)">
+    <header class="expo-head">
+      <p class="when"><span class="day">Lundi 23 novembre</span> · Fondation Louis Vuitton</p>
+      <h2>Gustave Fayet, collectionneur-créateur</h2>
+      <p class="artists">Gauguin · Van Gogh · Redon</p>
+    </header>
+    <div class="gallery">
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Self-portrait_with_bandaged_ear_%281889%2C_Courtauld_Institute%29.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Self-portrait_with_bandaged_ear_%281889%2C_Courtauld_Institute%29.jpg?width=1000" alt="Autoportrait de Van Gogh, oreille bandée, bonnet de fourrure et manteau vert" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><span class="tag">Dans l’expo</span><strong>Vincent van Gogh, <em>Autoportrait à l’oreille bandée</em></strong><span>1889</span></figcaption>
+        </figure>
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Paul_Gauguin_-_Le_Christ_jaune_%281889%29.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Paul_Gauguin_-_Le_Christ_jaune_%281889%29.jpg?width=1000" alt="Christ jaune en croix dans un paysage breton orange, trois Bretonnes à ses pieds" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><span class="tag">Dans l’expo</span><strong>Paul Gauguin, <em>Le Christ jaune</em></strong><span>1889</span></figcaption>
+        </figure>
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:La_Nuit_%28The_Night%29_-_1910-1911_-_Odilon_Redon.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/La_Nuit_%28The_Night%29_-_1910-1911_-_Odilon_Redon.jpg?width=1000" alt="Grand décor sombre et onirique d’Odilon Redon, figures et fleurs flottantes" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><span class="tag">Dans l’expo</span><strong>Odilon Redon, <em>La Nuit</em></strong><span>1910-1911</span></figcaption>
+        </figure>
+    </div>
+    <div class="body">
+      <div class="text">
+        <p class="lede">L’histoire d’un collectionneur qui a acheté Gauguin, Van Gogh et Redon avant tout le monde, puis s’est mis à créer lui-même. C’est la plus grosse des trois : 767 œuvres et documents.</p>
+        <ul class="facts"><li>10 Van Gogh, 78 Gauguin, 88 Redon, plus Degas, Cézanne, Toulouse-Lautrec, Matisse…</li><li>Deux parties : Fayet collectionneur, puis Fayet créateur (aquarelles, dessins pour des maisons de mode)</li><li>Les décors de Redon <em>Le Jour</em>, <em>La Nuit</em> et <em>Le Silence</em>, montrés au public pour la première fois</li><li>L’<em>Autoportrait à l’oreille bandée</em> de Van Gogh face à l’<em>Autoportrait à la palette</em> de Gauguin</li></ul>
+        <p class="like"><strong>Tu aimeras si</strong> tu aimes les couleurs franches, la fin du XIXe siècle, les grands noms en masse.</p>
+      </div>
+      <dl class="info">
+        <div><dt>Horaires</dt><dd>11h – 20h (fermé le mardi)</dd></div>
+        <div><dt>Tarif</dt><dd>18 € · étudiant 10 € · -18 ans 5 €</dd></div>
+        <div><dt>Durée</dt><dd>2 h à 2 h 30</dd></div>
+        <div><dt>Métro</dt><dd>Les Sablons (ligne 1), puis 15 min à pied</dd></div>
+        <div><dt>Expo</dt><dd>jusqu’au 8 mars 2027</dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="expo" id="tintoret" style="--c:var(--tintoret)">
+    <header class="expo-head">
+      <p class="when"><span class="day">Mardi 24 novembre</span> · Musée Jacquemart-André</p>
+      <h2>Éternel Tintoret</h2>
+      <p class="artists">Le Tintoret (vers 1518-1594)</p>
+    </header>
+    <div class="gallery">
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Jacopo_Robusti%2C_gen._Tintoretto%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Susanna_im_Bade_-_GG_1530_-_Kunsthistorisches_Museum.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo_Robusti%2C_gen._Tintoretto%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Susanna_im_Bade_-_GG_1530_-_Kunsthistorisches_Museum.jpg?width=1000" alt="Suzanne nue se regardant dans un miroir au bord de l’eau, deux vieillards l’épiant" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><span class="tag">Dans l’expo</span><strong>Le Tintoret, <em>Suzanne et les Vieillards</em></strong><span>vers 1555-1556 · Vienne</span></figcaption>
+        </figure>
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Uffizi%2C_Leda_and_the_Swan_by_Tintoretto.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Uffizi%2C_Leda_and_the_Swan_by_Tintoretto.jpg?width=1000" alt="Léda allongée sur un lit tendant la main vers un cygne, une servante à côté" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><span class="tag">Dans l’expo</span><strong>Le Tintoret, <em>Léda et le cygne</em></strong><span>Florence, Offices</span></figcaption>
+        </figure>
+    </div>
+    <div class="body">
+      <div class="text">
+        <p class="lede">Le grand peintre de Venise à la Renaissance : des corps en mouvement, des lumières de théâtre, des nus célèbres. Une expo courte et intime, dans un hôtel particulier du boulevard Haussmann.</p>
+        <ul class="facts"><li>Une trentaine à une quarantaine de peintures et dessins</li><li><em>Suzanne et les Vieillards</em> (prêt de Vienne), <em>Léda et le cygne</em>, <em>La Chute de Phaéton</em>, <em>Le Miracle de saint Augustin</em></li><li>Son <em>Autoportrait</em> réuni pour la première fois avec la copie qu’en a faite le jeune Manet</li><li>Une toile qui a appartenu à David Bowie, et une salle sur son influence chez Delacroix, Ingres, Cézanne et Manet</li></ul>
+        <p class="like"><strong>Tu aimeras si</strong> tu aimes la Renaissance italienne, le drame et le mouvement, les visites qui ne fatiguent pas.</p>
+      </div>
+      <dl class="info">
+        <div><dt>Horaires</dt><dd>Tous les jours dès 10h</dd></div>
+        <div><dt>Tarif</dt><dd>19 € · réduit 16 € · jeune 10 €</dd></div>
+        <div><dt>Durée</dt><dd>1 h à 1 h 15</dd></div>
+        <div><dt>Métro</dt><dd>Saint-Augustin ou Miromesnil (lignes 9, 13)</dd></div>
+        <div><dt>Expo</dt><dd>jusqu’au 24 janvier 2027</dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="expo" id="cassatt" style="--c:var(--cassatt)">
+    <header class="expo-head">
+      <p class="when"><span class="day">Mercredi 25 novembre</span> · Musée d’Orsay</p>
+      <h2>Mary Cassatt, l’indépendante</h2>
+      <p class="artists">Mary Cassatt (1844-1926)</p>
+    </header>
+    <div class="gallery">
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Mary_Cassatt_-_Girl_in_the_Garden_-_Google_Art_Project.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary_Cassatt_-_Girl_in_the_Garden_-_Google_Art_Project.jpg?width=1000" alt="Jeune femme en robe blanche cousant dans un jardin fleuri" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><span class="tag">Dans l’expo</span><strong>Mary Cassatt, <em>Jeune fille au jardin</em></strong><span>1880-1882 · musée d’Orsay</span></figcaption>
+        </figure>
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Mary_Cassatt_-_Little_Girl_in_a_Blue_Armchair_-_NGA_1983.1.18.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary_Cassatt_-_Little_Girl_in_a_Blue_Armchair_-_NGA_1983.1.18.jpg?width=1000" alt="Petite fille avachie dans un grand fauteuil bleu, un chien endormi à côté" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><strong>Mary Cassatt, <em>Petite fille dans un fauteuil bleu</em></strong><span>1878 · Washington</span></figcaption>
+        </figure>
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Mary_Stevenson_Cassatt_-_In_the_Loge_-_Google_Art_Project.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary_Stevenson_Cassatt_-_In_the_Loge_-_Google_Art_Project.jpg?width=1000" alt="Femme en noir à l’opéra regardant à la jumelle" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><strong>Mary Cassatt, <em>Dans la loge</em></strong><span>1878 · Boston</span></figcaption>
+        </figure>
+        <figure>
+          <a href="https://commons.wikimedia.org/wiki/File:Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg?width=1000" alt="Mère lavant les pieds d’une petite fille assise sur ses genoux" loading="lazy" onerror="this.closest('figure').classList.add('off')"></a>
+          <figcaption><strong>Mary Cassatt, <em>La Toilette de l’enfant</em></strong><span>1893 · Chicago</span></figcaption>
+        </figure>
+    </div>
+    <div class="body">
+      <div class="text">
+        <p class="lede">Une Américaine à Paris, la seule de son pays à exposer avec les impressionnistes. Des femmes modernes, des mères et des enfants, peints avec tendresse et liberté. Première grande expo qui lui est consacrée dans un musée national français.</p>
+        <ul class="facts"><li>Près de 80 peintures, pastels et gravures, dont beaucoup rarement sortis des États-Unis</li><li>Invitée par Degas, elle expose quatre fois avec les impressionnistes à partir de 1879</li><li>Sa grande fresque de Chicago (1893), perdue, reconstituée par un film</li><li>Fin du parcours : l’expo de 1915 qu’elle a montée à New York pour le droit de vote des femmes</li></ul>
+        <p class="like"><strong>Tu aimeras si</strong> tu aimes l’impressionnisme, les portraits tendres, l’histoire des femmes artistes.</p>
+      </div>
+      <dl class="info">
+        <div><dt>Horaires</dt><dd>9h30 – 18h (fermé le lundi)</dd></div>
+        <div><dt>Tarif</dt><dd>environ 16 € · gratuit -18 ans</dd></div>
+        <div><dt>Durée</dt><dd>1 h 30</dd></div>
+        <div><dt>Métro</dt><dd>Solférino (ligne 12, direct depuis Abbesses et Pigalle)</dd></div>
+        <div><dt>Expo</dt><dd>jusqu’au 31 janvier 2027</dd></div>
+      </dl>
+    </div>
+  </section>
+  <footer class="foot">
+    <p>« Dans l’expo » signale les œuvres citées par la presse comme présentées. Les autres images montrent le style de l’artiste. Images : Wikimedia Commons, œuvres du domaine public.</p>
+    <p>Réserve des billets à horaire fixe sur les sites officiels, surtout pour la Fondation Vuitton et Orsay. Horaires et tarifs relevés début novembre 2026 : vérifie-les en réservant.</p>
+    <ul>
+      <li><a href="https://www.sortiraparis.com/arts-culture/exposition/articles/346700-gustave-fayet-a-la-fondation-louis-vuitton-van-gogh-gauguin-et-redon-dans-une-exposition-evenement" target="_blank" rel="noopener">Sortir à Paris · Gustave Fayet à la Fondation Louis Vuitton</a></li>
+      <li><a href="https://www.offi.fr/tendances/expositions-musees/eternel-tintoret-au-musee-jacquemart-andre-le-venitien-virtuose-1136.html" target="_blank" rel="noopener">Offi · Éternel Tintoret, le Vénitien virtuose</a></li>
+      <li><a href="https://www.finestresullarte.info/fr/expositions/au-musee-d-orsay-une-grande-exposition-rend-hommage-a-la-peintre-impressionniste-mary-cassatt-et-a-son-independance" target="_blank" rel="noopener">Finestre sull’Arte · Mary Cassatt à Orsay</a></li>
+    </ul>
+  </footer>
+</main>
+</body>
+</html>
